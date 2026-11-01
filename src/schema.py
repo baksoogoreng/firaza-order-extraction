@@ -1,11 +1,12 @@
 """
 src/schema.py
-Single source of truth: label entitas, tag BIO, skema JSON, dan kamus awal.
-File lain (generator, preprocess, model, api) HARUS mengimpor dari sini
-supaya label tidak pernah tidak konsisten.
+Single source of truth: label entitas, tag BIO, skema JSON, aturan field per produk,
+dan kamus awal. File lain (generator, preprocess, model, api) HARUS mengimpor dari
+sini supaya label tidak pernah tidak konsisten.
 """
 from __future__ import annotations
 
+import random as _random
 from typing import Dict, List
 
 # ---------------------------------------------------------------------------
@@ -58,19 +59,11 @@ TAG2ID: Dict[str, int] = {t: i for i, t in enumerate(TAGS)}
 ID2TAG: Dict[int, str] = {i: t for t, i in TAG2ID.items()}
 
 # ---------------------------------------------------------------------------
-# 3. Jenis pesanan & skema JSON output
+# 3. Jenis pesanan, skema JSON output, dan aturan field per produk
 # ---------------------------------------------------------------------------
 ORDER_TYPES: List[str] = [
     "Ready Stock", "Custom Sajadah", "Custom Handuk", "Hampers", "Other",
 ]
-
-
-def required_fields(order_type: str | None) -> List[str]:
-    """Field yang wajib ada supaya pesanan bisa diproses admin."""
-    base = ["PRODUK", "JUMLAH", "TENGGAT"]
-    if order_type in ("Custom Sajadah", "Custom Handuk"):
-        return base + ["NAMA_PERSONALISASI"]
-    return base
 
 
 def empty_result() -> dict:
@@ -82,13 +75,57 @@ def empty_result() -> dict:
         "low_confidence": [],
     }
 
+
+# Aturan field per kategori produk (ASUMSI DESAIN, belum divalidasi ke Firaza)
+ALWAYS_REQUIRED: List[str] = ["PRODUK", "JUMLAH"]
+
+FIELD_RULES: Dict[str, Dict[str, List[str]]] = {
+    "sajadah": {"required": ["NAMA_PERSONALISASI", "UKURAN", "TENGGAT"],
+                "optional": ["WARNA"]},
+    "handuk":  {"required": ["NAMA_PERSONALISASI", "UKURAN", "TENGGAT"],
+                "optional": ["WARNA"]},
+    "mug":     {"required": ["NAMA_PERSONALISASI", "TENGGAT"],
+                "optional": ["WARNA"]},
+    "hampers": {"required": ["TENGGAT"],
+                "optional": ["WARNA", "TEKS_KARTU", "PENERIMA_ACARA"]},
+    "mukena":  {"required": ["UKURAN"],
+                "optional": ["WARNA", "TENGGAT"]},
+    "unknown": {"required": ["TENGGAT"], "optional": []},
+}
+
+# kata kunci -> kategori (dicek berurutan, memakai substring)
+CATEGORY_KEYWORDS = [
+    ("sajadah", "sajadah"), ("handuk", "handuk"),
+    ("mug", "mug"), ("tumbler", "mug"),
+    ("hampers", "hampers"), ("kado", "hampers"),
+    ("mukena", "mukena"),
+]
+
+# kategori yang punya pilihan ukuran (dipakai generator)
+SIZE_CATEGORIES = {"sajadah", "handuk", "mukena"}
+
+
+def category_of(product_text: str | None) -> str:
+    p = (product_text or "").lower()
+    for kw, cat in CATEGORY_KEYWORDS:
+        if kw in p:
+            return cat
+    return "unknown"
+
+
+def missing_fields(entities: Dict[str, List[str]]) -> List[str]:
+    """Label wajib yang masih kosong. Tidak menebak nilai apa pun."""
+    products = entities.get("PRODUK") or []
+    cat = category_of(products[0] if products else None)
+    needed = ALWAYS_REQUIRED + FIELD_RULES[cat]["required"]
+    return [f for f in needed if not entities.get(f)]
+
+
 # ---------------------------------------------------------------------------
-# 4. Kamus awal (perluas sendiri, makin beragam makin bagus)
+# 4. Kamus
 # ---------------------------------------------------------------------------
 # Nama dipisah per split supaya TIDAK ada nama yang muncul di dua split.
-import random as _random
-
-_REAL_NAMES = {
+_REAL_NAMES: Dict[str, List[str]] = {
     "train": [
         "Aisyah", "Budi", "Citra", "Dimas", "Eka", "Farhan", "Gita", "Hana",
         "Indra", "Jihan", "Kiki", "Laras", "Maya", "Naufal", "Okta", "Putri",
@@ -190,7 +227,7 @@ DEADLINE_RELATIVE: List[str] = [
 ]
 
 CARD_TEXTS: List[str] = [
-        "Semoga selalu dalam lindungan Allah",
+    "Semoga selalu dalam lindungan Allah",
     "Terima kasih sudah menjadi sahabat terbaik",
     "Selamat Idul Fitri, mohon maaf lahir dan batin",
     "Happy birthday, semoga panjang umur",
@@ -215,6 +252,12 @@ if __name__ == "__main__":
     assert not (s["val"] & s["test"]), "nama bocor val/test"
     # b) jumlah tag benar: 1 (O) + 2 per entitas
     assert len(TAGS) == 1 + 2 * len(ENTITY_LABELS)
+    # c) aturan field per produk
+    assert category_of("sajadah travel") == "sajadah"
+    assert "UKURAN" not in missing_fields({"PRODUK": ["mug"], "JUMLAH": ["2 pcs"],
+                                           "NAMA_PERSONALISASI": ["Aisyah"],
+                                           "TENGGAT": ["besok"]})
+    assert "UKURAN" in missing_fields({"PRODUK": ["sajadah"], "JUMLAH": ["2 pcs"]})
     print("OK. Jumlah tag:", len(TAGS))
-    print("Tags:", TAGS)
+    print("Nama per split:", {k: len(v) for k, v in NAMES_BY_SPLIT.items()})
     print("Contoh output kosong:", empty_result())
