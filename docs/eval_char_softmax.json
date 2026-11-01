@@ -1,0 +1,94 @@
+{
+  "val": {
+    "micro_f1": 0.9262,
+    "macro_f1": 0.9283,
+    "per_entity": {
+      "JUMLAH": {
+        "precision": 0.8875,
+        "recall": 0.9849,
+        "f1-score": 0.9337
+      },
+      "NAMA_PERSONALISASI": {
+        "precision": 0.9498,
+        "recall": 0.8535,
+        "f1-score": 0.8991
+      },
+      "PENERIMA_ACARA": {
+        "precision": 0.7217,
+        "recall": 0.9822,
+        "f1-score": 0.8321
+      },
+      "PRODUK": {
+        "precision": 0.9135,
+        "recall": 0.9375,
+        "f1-score": 0.9254
+      },
+      "TEKS_KARTU": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0
+      },
+      "TENGGAT": {
+        "precision": 0.9561,
+        "recall": 0.9714,
+        "f1-score": 0.9637
+      },
+      "UKURAN": {
+        "precision": 0.987,
+        "recall": 0.987,
+        "f1-score": 0.987
+      },
+      "WARNA": {
+        "precision": 0.7971,
+        "recall": 0.9954,
+        "f1-score": 0.8853
+      }
+    }
+  },
+  "test": {
+    "micro_f1": 0.9229,
+    "macro_f1": 0.9106,
+    "per_entity": {
+      "JUMLAH": {
+        "precision": 0.9749,
+        "recall": 0.9659,
+        "f1-score": 0.9704
+      },
+      "NAMA_PERSONALISASI": {
+        "precision": 0.886,
+        "recall": 0.6227,
+        "f1-score": 0.7314
+      },
+      "PENERIMA_ACARA": {
+        "precision": 0.7538,
+        "recall": 0.8909,
+        "f1-score": 0.8167
+      },
+      "PRODUK": {
+        "precision": 0.9703,
+        "recall": 0.9812,
+        "f1-score": 0.9758
+      },
+      "TEKS_KARTU": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0
+      },
+      "TENGGAT": {
+        "precision": 0.8661,
+        "recall": 0.9728,
+        "f1-score": 0.9164
+      },
+      "UKURAN": {
+        "precision": 1.0,
+        "recall": 0.9489,
+        "f1-score": 0.9738
+      },
+      "WARNA": {
+        "precision": 0.8367,
+        "recall": 0.9748,
+        "f1-score": 0.9004
+      }
+    }
+  }
+}

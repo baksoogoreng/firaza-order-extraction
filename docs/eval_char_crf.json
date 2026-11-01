@@ -1,0 +1,94 @@
+{
+  "val": {
+    "micro_f1": 0.9112,
+    "macro_f1": 0.9134,
+    "per_entity": {
+      "JUMLAH": {
+        "precision": 0.8823,
+        "recall": 0.9767,
+        "f1-score": 0.9271
+      },
+      "NAMA_PERSONALISASI": {
+        "precision": 0.932,
+        "recall": 0.8113,
+        "f1-score": 0.8675
+      },
+      "PENERIMA_ACARA": {
+        "precision": 0.7155,
+        "recall": 0.9822,
+        "f1-score": 0.8279
+      },
+      "PRODUK": {
+        "precision": 0.8934,
+        "recall": 0.9112,
+        "f1-score": 0.9022
+      },
+      "TEKS_KARTU": {
+        "precision": 0.9767,
+        "recall": 1.0,
+        "f1-score": 0.9882
+      },
+      "TENGGAT": {
+        "precision": 0.9755,
+        "recall": 0.9964,
+        "f1-score": 0.9859
+      },
+      "UKURAN": {
+        "precision": 0.9679,
+        "recall": 0.9805,
+        "f1-score": 0.9742
+      },
+      "WARNA": {
+        "precision": 0.739,
+        "recall": 0.9566,
+        "f1-score": 0.8338
+      }
+    }
+  },
+  "test": {
+    "micro_f1": 0.9199,
+    "macro_f1": 0.9064,
+    "per_entity": {
+      "JUMLAH": {
+        "precision": 0.9866,
+        "recall": 0.9659,
+        "f1-score": 0.9762
+      },
+      "NAMA_PERSONALISASI": {
+        "precision": 0.8759,
+        "recall": 0.6202,
+        "f1-score": 0.7262
+      },
+      "PENERIMA_ACARA": {
+        "precision": 0.7751,
+        "recall": 0.7939,
+        "f1-score": 0.7844
+      },
+      "PRODUK": {
+        "precision": 0.9077,
+        "recall": 0.9712,
+        "f1-score": 0.9384
+      },
+      "TEKS_KARTU": {
+        "precision": 0.9932,
+        "recall": 1.0,
+        "f1-score": 0.9966
+      },
+      "TENGGAT": {
+        "precision": 0.9287,
+        "recall": 0.9909,
+        "f1-score": 0.9588
+      },
+      "UKURAN": {
+        "precision": 0.9719,
+        "recall": 0.983,
+        "f1-score": 0.9774
+      },
+      "WARNA": {
+        "precision": 0.8243,
+        "recall": 0.9748,
+        "f1-score": 0.8932
+      }
+    }
+  }
+}

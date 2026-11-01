@@ -1,0 +1,119 @@
+{
+  "name": "char_softmax",
+  "config": {
+    "word_dim": 100,
+    "hidden": 128,
+    "dropout": 0.5,
+    "use_char": true,
+    "use_crf": false
+  },
+  "best_val_f1": 0.9512,
+  "n_params": 393769,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.091,
+      "val_f1": 0.8606
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2474,
+      "val_f1": 0.9103
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.1361,
+      "val_f1": 0.925
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.092,
+      "val_f1": 0.9325
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.0722,
+      "val_f1": 0.9329
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.0579,
+      "val_f1": 0.9351
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0472,
+      "val_f1": 0.9369
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0415,
+      "val_f1": 0.9393
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0352,
+      "val_f1": 0.949
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.032,
+      "val_f1": 0.9421
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.029,
+      "val_f1": 0.9386
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.0273,
+      "val_f1": 0.9427
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.0248,
+      "val_f1": 0.9494
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.022,
+      "val_f1": 0.9455
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.0222,
+      "val_f1": 0.9461
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.0203,
+      "val_f1": 0.9512
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.0196,
+      "val_f1": 0.9484
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.0182,
+      "val_f1": 0.9508
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.0176,
+      "val_f1": 0.9512
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.0174,
+      "val_f1": 0.9485
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.0163,
+      "val_f1": 0.9487
+    }
+  ]
+}
