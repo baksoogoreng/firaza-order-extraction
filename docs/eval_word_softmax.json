@@ -1,73 +1,71 @@
 {
   "val": {
-    "micro_f1": 0.89,
-    "macro_f1": 0.9012,
+    "micro_f1": 0.9448,
     "per_entity": {
       "JUMLAH": {
-        "precision": 0.8611,
-        "recall": 0.8848,
-        "f1-score": 0.8728
+        "precision": 0.9823,
+        "recall": 0.977,
+        "f1-score": 0.9797
       },
       "NAMA_PERSONALISASI": {
-        "precision": 0.9228,
-        "recall": 0.7746,
-        "f1-score": 0.8423
+        "precision": 0.9264,
+        "recall": 0.7759,
+        "f1-score": 0.8445
       },
       "PENERIMA_ACARA": {
-        "precision": 0.7444,
-        "recall": 0.9822,
-        "f1-score": 0.8469
+        "precision": 0.9607,
+        "recall": 0.9884,
+        "f1-score": 0.9744
       },
       "PRODUK": {
-        "precision": 0.9036,
-        "recall": 0.9138,
-        "f1-score": 0.9086
+        "precision": 0.9727,
+        "recall": 0.98,
+        "f1-score": 0.9763
       },
       "TEKS_KARTU": {
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1-score": 1.0
+        "precision": 0.936,
+        "recall": 0.9415,
+        "f1-score": 0.9388
       },
       "TENGGAT": {
-        "precision": 0.8468,
-        "recall": 0.9375,
-        "f1-score": 0.8898
+        "precision": 0.9616,
+        "recall": 0.9705,
+        "f1-score": 0.966
       },
       "UKURAN": {
-        "precision": 0.9684,
-        "recall": 0.9935,
-        "f1-score": 0.9808
+        "precision": 0.9826,
+        "recall": 0.9826,
+        "f1-score": 0.9826
       },
       "WARNA": {
-        "precision": 0.7703,
-        "recall": 0.9954,
-        "f1-score": 0.8685
+        "precision": 0.768,
+        "recall": 0.9953,
+        "f1-score": 0.867
       }
     }
   },
   "test": {
-    "micro_f1": 0.915,
-    "macro_f1": 0.9279,
+    "micro_f1": 0.9669,
     "per_entity": {
       "JUMLAH": {
-        "precision": 0.9064,
-        "recall": 0.8506,
-        "f1-score": 0.8776
+        "precision": 0.9747,
+        "recall": 0.9657,
+        "f1-score": 0.9702
       },
       "NAMA_PERSONALISASI": {
-        "precision": 0.942,
-        "recall": 0.8398,
-        "f1-score": 0.888
+        "precision": 0.9635,
+        "recall": 0.7233,
+        "f1-score": 0.8263
       },
       "PENERIMA_ACARA": {
-        "precision": 0.9096,
-        "recall": 0.9152,
-        "f1-score": 0.9124
+        "precision": 0.9941,
+        "recall": 0.9711,
+        "f1-score": 0.9825
       },
       "PRODUK": {
-        "precision": 0.9207,
-        "recall": 0.9288,
-        "f1-score": 0.9247
+        "precision": 0.9875,
+        "recall": 0.9912,
+        "f1-score": 0.9894
       },
       "TEKS_KARTU": {
         "precision": 1.0,
@@ -75,19 +73,64 @@
         "f1-score": 1.0
       },
       "TENGGAT": {
-        "precision": 0.871,
-        "recall": 0.9909,
-        "f1-score": 0.9271
+        "precision": 0.9747,
+        "recall": 0.9926,
+        "f1-score": 0.9836
       },
       "UKURAN": {
-        "precision": 0.9721,
-        "recall": 0.9886,
-        "f1-score": 0.9803
+        "precision": 0.9912,
+        "recall": 1.0,
+        "f1-score": 0.9956
       },
       "WARNA": {
-        "precision": 0.8533,
-        "recall": 0.9825,
-        "f1-score": 0.9134
+        "precision": 0.9596,
+        "recall": 0.9901,
+        "f1-score": 0.9746
+      }
+    }
+  },
+  "handwritten": {
+    "micro_f1": 0.6271,
+    "per_entity": {
+      "JUMLAH": {
+        "precision": 0.5714,
+        "recall": 0.9032,
+        "f1-score": 0.7
+      },
+      "NAMA_PERSONALISASI": {
+        "precision": 0.45,
+        "recall": 0.6,
+        "f1-score": 0.5143
+      },
+      "PENERIMA_ACARA": {
+        "precision": 0.125,
+        "recall": 0.129,
+        "f1-score": 0.127
+      },
+      "PRODUK": {
+        "precision": 0.6742,
+        "recall": 0.7595,
+        "f1-score": 0.7143
+      },
+      "TEKS_KARTU": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0
+      },
+      "TENGGAT": {
+        "precision": 0.4286,
+        "recall": 0.6667,
+        "f1-score": 0.5217
+      },
+      "UKURAN": {
+        "precision": 0.875,
+        "recall": 0.5385,
+        "f1-score": 0.6667
+      },
+      "WARNA": {
+        "precision": 0.6905,
+        "recall": 0.9667,
+        "f1-score": 0.8056
       }
     }
   }

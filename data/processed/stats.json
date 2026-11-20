@@ -1,65 +1,41 @@
 {
   "train": {
-    "n_messages": 6000,
-    "avg_tokens": 17.1,
-    "order_types": {
-      "Hampers": 1487,
-      "Custom Handuk": 1707,
-      "Custom Sajadah": 1337,
-      "Ready Stock": 489,
-      "Other": 980
-    },
-    "entity_spans": {
-      "NAMA_PERSONALISASI": 2834,
-      "PRODUK": 6000,
-      "JUMLAH": 5607,
-      "WARNA": 4068,
-      "UKURAN": 1781,
-      "TENGGAT": 3664,
-      "TEKS_KARTU": 1176,
-      "PENERIMA_ACARA": 1737
-    }
+    "pesan": 6000,
+    "% dari total": 78.9,
+    "rata2 token": 16.9,
+    "NAMA_PERSONALISASI": 2770,
+    "PRODUK": 6000,
+    "JUMLAH": 5588,
+    "WARNA": 4093,
+    "UKURAN": 1312,
+    "TENGGAT": 3676,
+    "TEKS_KARTU": 1195,
+    "PENERIMA_ACARA": 1691
   },
   "val": {
-    "n_messages": 800,
-    "avg_tokens": 16.8,
-    "order_types": {
-      "Custom Handuk": 224,
-      "Custom Sajadah": 165,
-      "Hampers": 197,
-      "Ready Stock": 82,
-      "Other": 132
-    },
-    "entity_spans": {
-      "NAMA_PERSONALISASI": 362,
-      "PRODUK": 800,
-      "JUMLAH": 735,
-      "WARNA": 429,
-      "UKURAN": 154,
-      "TENGGAT": 564,
-      "TEKS_KARTU": 152,
-      "PENERIMA_ACARA": 184
-    }
+    "pesan": 800,
+    "% dari total": 10.5,
+    "rata2 token": 16.8,
+    "NAMA_PERSONALISASI": 357,
+    "PRODUK": 800,
+    "JUMLAH": 740,
+    "WARNA": 429,
+    "UKURAN": 115,
+    "TENGGAT": 542,
+    "TEKS_KARTU": 171,
+    "PENERIMA_ACARA": 173
   },
   "test": {
-    "n_messages": 800,
-    "avg_tokens": 17.0,
-    "order_types": {
-      "Custom Handuk": 228,
-      "Hampers": 198,
-      "Custom Sajadah": 184,
-      "Ready Stock": 64,
-      "Other": 126
-    },
-    "entity_spans": {
-      "NAMA_PERSONALISASI": 383,
-      "PRODUK": 800,
-      "JUMLAH": 760,
-      "WARNA": 486,
-      "UKURAN": 171,
-      "TENGGAT": 565,
-      "TEKS_KARTU": 164,
-      "PENERIMA_ACARA": 189
-    }
+    "pesan": 800,
+    "% dari total": 10.5,
+    "rata2 token": 16.7,
+    "NAMA_PERSONALISASI": 365,
+    "PRODUK": 800,
+    "JUMLAH": 759,
+    "WARNA": 504,
+    "UKURAN": 112,
+    "TENGGAT": 544,
+    "TEKS_KARTU": 164,
+    "PENERIMA_ACARA": 173
   }
 }

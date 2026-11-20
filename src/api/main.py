@@ -15,9 +15,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from src import schema as S
+from src.classifier import CLF_PATH, load_classifier, predict_one
 from src.model import load_checkpoint
 from src.preprocess import make_batch
 from src.tokenizer import tokenize_with_offsets
+from src.summarizer import summarize_order
+from src.normalizer import normalize_entities
 
 MODEL_PATH = os.getenv("MODEL_PATH", "models/word_crf.pt")
 LOW_CONF = float(os.getenv("LOW_CONF", "0.60"))   # di bawah ini = perlu dicek admin
@@ -25,15 +28,17 @@ MAX_CHARS, MAX_TOKENS = 2000, 300
 
 STATE: dict = {}
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     model, wv, cv = load_checkpoint(MODEL_PATH, "cpu")
     STATE.update(model=model, wv=wv, cv=cv, name=os.path.basename(MODEL_PATH))
+    STATE["clf"] = load_classifier(CLF_PATH) if os.path.exists(CLF_PATH) else None
     yield
     STATE.clear()
 
 
-app = FastAPI(title="Firaza Order Extraction API", version="0.1", lifespan=lifespan)
+app = FastAPI(title="Firaza Order Extraction API", version="0.2", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],  # React (Vite)
@@ -61,13 +66,33 @@ class Span(BaseModel):
 class ExtractResponse(BaseModel):
     model: str
     text: str
-    jenis_pesanan: Optional[str] = None   # diisi klasifier di Step 6
+    jenis_pesanan: Optional[str] = None
+    jenis_confidence: Optional[float] = None
     entities: Dict[str, List[str]]
     spans: List[Span]
     missing_fields: List[str]
     low_confidence: List[str]
     sentence_confidence: float
+    normalisasi: Dict[str, List[Dict[str, Optional[str]]]] = {}
 
+class SummarizeRequest(BaseModel):
+    jenis_pesanan: Optional[str] = None
+    entities: Dict[str, List[str]]
+
+
+class SummarizeResponse(BaseModel):
+    summary: str
+    source: str
+    note: Optional[str] = None
+    missing_fields: List[str]
+
+
+@app.post("/summarize", response_model=SummarizeResponse)
+def summarize(req: SummarizeRequest):
+    ents = {l: [v.strip() for v in req.entities.get(l, []) if v.strip()] for l in S.ENTITY_LABELS}
+    missing = S.missing_fields(ents, req.jenis_pesanan)
+    out = summarize_order(req.jenis_pesanan, ents, missing)
+    return SummarizeResponse(**out, missing_fields=missing)
 
 # ---------------------------------------------------------------------------
 # Util
@@ -96,8 +121,28 @@ def spans_from_tags(tags: List[str]) -> List[Tuple[str, int, int]]:
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "model": STATE.get("name"), "low_conf_threshold": LOW_CONF}
+    return {"status": "ok", "model": STATE.get("name"),
+            "classifier_loaded": STATE.get("clf") is not None,
+            "low_conf_threshold": LOW_CONF}
 
+@app.get("/catalog")
+def catalog():
+    """Katalog contoh (asumsi desain). Dibaca dari schema, sumber yang sama dengan training."""
+    produk = {}
+    for term in S.PRODUCT_TERMS:
+        produk.setdefault(S.category_of(term), []).append(term)
+    return {
+        "catatan": "Katalog contoh (asumsi desain, bukan data asli Firaza)",
+        "produk": produk,
+        "warna": S.COLORS,
+        "ukuran": {"huruf": S.SIZE_LETTERS, "dimensi": S.SIZE_DIMS,
+                   "berlaku_untuk": sorted(S.SIZE_CATEGORIES)},
+        "satuan_jumlah": S.QTY_UNITS,
+        "jenis_pesanan": S.ORDER_TYPES,
+        "field_wajib": {"semua_produk": S.ALWAYS_REQUIRED,
+                        **{cat: rule["required"] for cat, rule in S.FIELD_RULES.items()
+                           if cat != "unknown"}},
+    }
 
 @app.post("/extract", response_model=ExtractResponse)
 def extract(req: ExtractRequest):
@@ -128,13 +173,20 @@ def extract(req: ExtractRequest):
         if is_low and label not in low_labels:
             low_labels.append(label)
 
+    jenis, jenis_conf = None, None
+    if STATE.get("clf") is not None:
+        jenis, jenis_conf = predict_one(STATE["clf"], text)
+        jenis_conf = round(jenis_conf, 4)
+
     return ExtractResponse(
         model=STATE["name"],
         text=text,
-        jenis_pesanan=None,
+        jenis_pesanan=jenis,
+        jenis_confidence=jenis_conf,
         entities=entities,
         spans=spans,
-        missing_fields=S.missing_fields(entities),   # field wajib yang kosong, tidak ditebak
+        missing_fields=S.missing_fields(entities, jenis),
         low_confidence=low_labels,
         sentence_confidence=round(seq_conf[0], 4),
+        normalisasi=normalize_entities(entities),
     )

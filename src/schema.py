@@ -113,10 +113,21 @@ def category_of(product_text: str | None) -> str:
     return "unknown"
 
 
-def missing_fields(entities: Dict[str, List[str]]) -> List[str]:
-    """Label wajib yang masih kosong. Tidak menebak nilai apa pun."""
+ORDER_TYPE_CATEGORY = {
+    "Custom Sajadah": "sajadah",
+    "Custom Handuk": "handuk",
+    "Hampers": "hampers",
+    "Ready Stock": "mukena",
+}  # "Other" sengaja tidak dipetakan (bisa mug, tumbler, dll.)
+
+
+def missing_fields(entities: Dict[str, List[str]], order_type: str | None = None) -> List[str]:
+    """Label wajib yang masih kosong. Tidak menebak nilai apa pun.
+    Kategori dari kata kunci produk; kalau gagal (mis. typo), pakai jenis pesanan."""
     products = entities.get("PRODUK") or []
     cat = category_of(products[0] if products else None)
+    if cat == "unknown" and order_type:
+        cat = ORDER_TYPE_CATEGORY.get(order_type, "unknown")
     needed = ALWAYS_REQUIRED + FIELD_RULES[cat]["required"]
     return [f for f in needed if not entities.get(f)]
 
@@ -257,7 +268,7 @@ if __name__ == "__main__":
     assert "UKURAN" not in missing_fields({"PRODUK": ["mug"], "JUMLAH": ["2 pcs"],
                                            "NAMA_PERSONALISASI": ["Aisyah"],
                                            "TENGGAT": ["besok"]})
-    assert "UKURAN" in missing_fields({"PRODUK": ["sajadah"], "JUMLAH": ["2 pcs"]})
+    assert "UKURAN" in missing_fields({"PRODUK": ["sjadah"], "JUMLAH": ["2 pc"]}, "Custom Sajadah")
     print("OK. Jumlah tag:", len(TAGS))
     print("Nama per split:", {k: len(v) for k, v in NAMES_BY_SPLIT.items()})
     print("Contoh output kosong:", empty_result())

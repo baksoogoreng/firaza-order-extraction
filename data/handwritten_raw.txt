@@ -1,0 +1,91 @@
+sajadah | aku mau pesen [PRODUK: sajadah bordir] nama [NAMA: Aisyah Putri] [JUMLAH: 3 pcs] warna [WARNA: sage green]
+sajadah | mau bikin sajadh [PRODUK: sajadah] sbg [PENERIMA: souvenir umroh]
+sajadah | kak mau pesan [PRODUK: sajadah bordir] [JUMLAH: 2 pcs] nama [NAMA: Dewi] warna [WARNA: maroon] ya
+sajadah | min bisa bikin [PRODUK: sajadah travel] ukuran [UKURAN: 70x110] warna [WARNA: navy]?
+sajadah | permisi kak mau order [JUMLAH: 5] [PRODUK: sajadah custom] untuk acara [PENERIMA: pengajian]
+sajadah | sjdh [PRODUK: sajadah] ini rencananya untuk [PENERIMA: jamaah masjid]
+sajadah | kak [PRODUK: sajadah] yg [UKURAN: 60x100] ada? mau warna [WARNA: cream]
+sajadah | min tolong buatin [PRODUK: sajadah bordir] nama [NAMA: Pak Hendra] selesai [TENGGAT: 10 desember]
+sajadah | mau order [JUMLAH: 10 pcs] [PRODUK: sajadah] buat [PENERIMA: souvenir nikahan], warna [WARNA: dusty pink]
+sajadah | kak bisa bordir tulisan "[KARTU: Barakallah fii umrik]" di [PRODUK: sajadah]?
+sajadah | aku mau pesan [PRODUK: sajadah] untuk [PENERIMA: hadiah pernikahan]
+sajadah | kak mau [PRODUK: sajadah travel] [JUMLAH: 2] nama [NAMA: Rani dan Rina] sebelum [TENGGAT: minggu depan]
+sajadah | ada [PRODUK: sajadah anak] ukuran [UKURAN: 40x60] ga min
+sajadah | pesen [JUMLAH: 12 box] [PRODUK: sajadah bordir] untuk [PENERIMA: hadiah guru], nama [NAMA: SD Harapan Bangsa]
+sajadah | butuh [JUMLAH: 10] [PRODUK: sajadah] buat [PENERIMA: acara wisuda]
+sajadah | mau [PRODUK: sajadah jumbo] [UKURAN: 100x150], [JUMLAH: 1 pcs] aja
+sajadah | kak tolong buatkan [PRODUK: sajadah] [JUMLAH: 20] buat acara [PENERIMA: wisuda tahfidz], butuh [TENGGAT: 25 november]
+sajadah | [PRODUK: sajadah travel] [JUMLAH: 3 biji] nama [NAMA: Fira] wrn [WARNA: mocca] bisa min?
+sajadah | min aku mau pesen [PRODUK: sajadah bordir], tulis [NAMA: Hj. Siti Aminah], warna [WARNA: gold]
+sajadah | pesan [PRODUK: sajadah] untuk [PENERIMA: peserta pengajian]
+sajadah | kak mau [JUMLAH: 2 pcs] [PRODUK: sajadah] buat [PENERIMA: kado pernikahan], warna [WARNA: broken white]
+sajadah | [PRODUK: sajadah bordir] nama [NAMA: RIZKY] bisa jadi [TENGGAT: besok sore] ga?
+
+handuk | halo min mau pesan [PRODUK: handuk bordir] [JUMLAH: 4 pcs] nama [NAMA: Kevin] warna [WARNA: abu-abu]
+handuk | kak [PRODUK: handuk] ukuran [UKURAN: 70x140] ada warna [WARNA: putih]?
+handuk | mau order [PRODUK: handuk] buat [PENERIMA: souvenir ulang tahun], [JUMLAH: 30 pcs]
+handuk | min bisa bordir nama [NAMA: Zahra] di [PRODUK: handuk]?
+handuk | hndukkk [PRODUK: handuk] ini untuk [PENERIMA: hadiah ulang tahun ibu]
+handuk | ada [PRODUK: handuk mandi] ukuran [UKURAN: 100x150] untuk [PENERIMA: keluarga besar]?
+handuk | kak butuh [JUMLAH: 15 pcs] [PRODUK: handuk bordir] sebelum [TENGGAT: tanggal 1 desember]
+handuk | [PRODUK: handuk] warna [WARNA: hitam] nama [NAMA: ANDI] satu aja
+handuk | [PRODUK: handuk kecil] buat [PENERIMA: hampers bayi] ready ga min?
+handuk | min order [JUMLAH: 100 pcs] [PRODUK: handuk] untuk [PENERIMA: acara kantor]
+handuk | bisa tulis "[KARTU: Terima kasih sudah hadir]" di bordir [PRODUK: handuk]?
+handuk | kak [PRODUK: handuk] yg [UKURAN: 35x75] bahan cotton ada?
+handuk | mau pesan [JUMLAH: 20] [PRODUK: handuk hotel] buat [PENERIMA: karyawan kantor]
+handuk | [PRODUK: handuk bordir] [JUMLAH: 5 biji] nama [NAMA: keluarga besar wijaya] wrn [WARNA: coklat]
+handuk | min ada [PRODUK: handuk] warna [WARNA: emerald] ukuran [UKURAN: 50x100]?
+handuk | mau beli [PRODUK: handuk] buat [PENERIMA: hadiah ibu], bordir nama [NAMA: Mama]
+handuk | kak bisa selesai [TENGGAT: jumat ini] kalau pesen [JUMLAH: 20] [PRODUK: handuk]?
+handuk | [PRODUK: handuk] [JUMLAH: 3 pcs] warna [WARNA: pink] ukuran [UKURAN: 70x140] untuk [PENERIMA: adek saya]?
+handuk | min [PRODUK: handuk bordir] untuk [PENERIMA: souvenir pernikahan] [JUMLAH: 50 pcs] bisa?
+handuk | ada [PRODUK: handuk microfiber] ga kak?
+
+hampers | halo kak mau [PRODUK: hampers lebaran] [JUMLAH: 10 box] untuk [PENERIMA: klien kantor]
+hampers | min ada [PRODUK: hampers] buat [PENERIMA: guru]? budget nanti aku tanyakan dulu
+hampers | mau order [JUMLAH: 5 set] [PRODUK: hampers ulang tahun] warna [WARNA: pastel]
+hampers | kak bisa masukin kartu "[KARTU: Selamat Idul Fitri, mohon maaf lahir dan batin]"?
+hampers | pesan [PRODUK: hampers bayi] buat [PENERIMA: anak pertama kakak] ya
+hampers | min butuh [JUMLAH: 25 box] [PRODUK: hampers] sebelum [TENGGAT: 20 desember] untuk [PENERIMA: acara nikahan]
+hampers | ada [PRODUK: hampers wisuda] warna [WARNA: navy]?
+hampers | mau [PRODUK: hampers custom] nama penerima [NAMA: Ibu Ratna]
+hampers | kak [PRODUK: hampers lebaran] [JUMLAH: 3 pcs] bisa dikirim [TENGGAT: minggu depan]?
+hampers | tolong buat [JUMLAH: 12 paket] [PRODUK: hampers] untuk [PENERIMA: peserta seminar], kartu "[KARTU: Terima kasih atas partisipasinya]"
+hampers | min ada [PRODUK: hampers cokelat]?
+hampers | [PRODUK: hampers wedding] [JUMLAH: 100 box] nama [NAMA: Dinda & Arga]
+hampers | kak mau [PRODUK: hampers] untuk [PENERIMA: calon mertua], warna [WARNA: cream] dan [WARNA: gold]
+hampers | butuh [PRODUK: hampers] [JUMLAH: 2] aja buat [PENERIMA: teman kantor]
+hampers | bisa custom tulisan "[KARTU: Happy Birthday, Bestie!]" untuk [PRODUK: hampers] buat [PENERIMA: sahabat setia]?
+hampers | [PRODUK: hampers lebaran] [JUMLAH: 10 lusin] untuk [PENERIMA: rekan kerja] bisa min?
+hampers | kak aku mau order [JUMLAH: 8 set] [PRODUK: hampers mukena] untuk [PENERIMA: keluarga]
+hampers | tersedia [PRODUK: hampers] warna [WARNA: sage] ukuran box [UKURAN: 25x25x10]?
+hampers | tolong siapin [PRODUK: hampers] [JUMLAH: 40 box] sebelum [TENGGAT: akhir bulan] untuk [PENERIMA: acara kelahiran bayi]
+hampers | min mau [PRODUK: hampers custom] tapi belum tau isi produknya, buat [PENERIMA: dosen pembimbing]
+
+ready | kak [PRODUK: mukena] warna [WARNA: putih] [UKURAN: L] ready ga?
+ready | min stok [PRODUK: sajadah travel] warna [WARNA: hitam] masih ada?
+ready | [PRODUK: handuk] [WARNA: maroon] [JUMLAH: 2 pcs] ready kak?
+ready | ready [PRODUK: tasbih digital] warna [WARNA: putih]?
+ready | min ada [PRODUK: sajadah anak] [UKURAN: 50x70]?
+ready | kak stok [PRODUK: handuk microfiber] masih tersedia?
+ready | [PRODUK: mukena bordir] warna [WARNA: dusty pink] ada?
+ready | [PRODUK: sajadah polos] yg [WARNA: abu] ready brp pcs min
+ready | ready kah [PRODUK: tas serut] warna [WARNA: navy]?
+ready | kak ada [PRODUK: bantal leher] warna [WARNA: cream]?
+ready | mau cek stok [PRODUK: tumbler] warna [WARNA: hitam]
+ready | min [PRODUK: pouch] ukuran [UKURAN: 20x15] ada?
+ready | [PRODUK: handuk] warna [WARNA: biru] ready?
+ready | ada [PRODUK: bantal] bordir nama ga?
+ready | ready [PRODUK: totebag] warna [WARNA: broken white] berapa?
+
+other | kak bisa kirim katalog produknya?
+other | min ongkir ke Surabaya berapa ya?
+other | permisi, toko buka sampai jam berapa?
+other | kak pembayaran bisa pakai transfer bank?
+other | kalau pesan hari ini estimasi pengerjaan berapa lama?
+other | min boleh minta foto asli [PRODUK: sajadah bordir]?
+other | apakah bisa dikirim ke luar pulau?
+other | kak ada diskon untuk pembelian banyak?
+other | mau tanya cara perawatan [PRODUK: handuk] supaya awet
+other | min bisa custom logo perusahaan di [PRODUK: totebag]?

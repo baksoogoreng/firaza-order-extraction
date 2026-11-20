@@ -1,0 +1,26 @@
+# lingkungan dan cache
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+
+# rahasia dan kredensial (jangan pernah di-commit)
+.env
+.env.*
+*creds*
+*credential*
+*secret*
+*.pem
+*.key
+kaggle.json
+
+# folder sementara dan cadangan
+data_lama/
+models_lama/
+kaggle_export/
+firaza_artifacts.zip
+
+# frontend
+frontend/node_modules/
+frontend/dist/
