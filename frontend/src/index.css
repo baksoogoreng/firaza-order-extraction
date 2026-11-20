@@ -1,3 +1,25 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-       background: #f5f6f8; color: #1f2430; }
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-brand-50: #ECFDF5;
+  --color-brand-100: #D1FAE5;
+  --color-brand-200: #A7F3D0;
+  --color-brand-500: #10B981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065F46;
+  --color-brand-900: #064E3B;
+  --color-brand-950: #022C22;
+
+  --color-sand-50: #FAF8F5;
+  --color-sand-100: #F5F2EC;
+  --color-sand-200: #E7E2D8;
+}
+
+body {
+  background-color: #FAF8F5;
+  color: #1C1917;
+}

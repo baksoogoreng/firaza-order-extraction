@@ -246,7 +246,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>Asisten Input Pesanan Firaza</h1>
+        <h1 className="text-brand-800 font-bold">Asisten Input Pesanan Firaza</h1>
         <p>Tempel pesan customer, periksa hasil ekstraksi, lalu buat ringkasan pesanan.</p>
       </header>
 
